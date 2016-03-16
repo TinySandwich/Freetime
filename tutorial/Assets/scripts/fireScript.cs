@@ -5,6 +5,7 @@ using System.Collections.Generic;
 public class fireScript : MonoBehaviour {
 
 	public float bulletSpeed = 50;
+	public Rigidbody2D Voltage;
 	public Rigidbody2D bCharge1;
 	public Rigidbody2D bCharge2;
 	public Rigidbody2D bCharge3;
@@ -24,17 +25,18 @@ public class fireScript : MonoBehaviour {
 		GUI.Label (new Rect (10, 10, 1000, 20), output);
 	}
 
+	/*=================================================================================================*/
+	/*Firing plasma*/
+	/*=================================================================================================*/
 	void Fire(Rigidbody2D bulletClone)
 	{
-		// Determine vector between mouse and player
-		var mouse = Input.mousePosition;
-		var screenPoint = Camera.main.WorldToScreenPoint (transform.position);
-		var offset = new Vector2 (mouse.x - screenPoint.x, mouse.y - screenPoint.y);
+		/* Determine vector between mouse and player */
+		Vector3 mouse = Input.mousePosition;
+		Vector3 screenPoint = Camera.main.WorldToScreenPoint (transform.position);
+		Vector2 offset = setOffset (mouse, screenPoint);
+		//var offset = new Vector2 (mouse.x - screenPoint.x, mouse.y - screenPoint.y);
 
-		// Normalize vector
-		float length = Mathf.Sqrt ((offset.x * offset.x) + (offset.y * offset.y));
-		offset.x = offset.x / length;
-		offset.y = offset.y / length;
+		offset = offset.normalized;
 
 		// Destroy the charging object
 		Destroy(bulletClone.gameObject);
@@ -50,6 +52,22 @@ public class fireScript : MonoBehaviour {
 		Physics.IgnoreLayerCollision (2, 3, true);
 	}
 
+	Vector2 setOffset (Vector3 mouse, Vector3 screenPoint)
+	{
+		float myX = mouse.x - screenPoint.x;
+		float myY = mouse.y - screenPoint.y;
+		if ((mouse.x < 230f && mouse.x > screenPoint.x) || (mouse.x >= 230f && mouse.x < screenPoint.x))
+			myX = screenPoint.x - mouse.x;
+		if ((mouse.y < 330f && mouse.y > screenPoint.y) || (mouse.y >= 330f && mouse.y < screenPoint.y))
+			myY = screenPoint.y - mouse.y;
+
+		Vector2 myVector = new Vector2(myX, myY);
+		return myVector;
+	}
+
+	/*=================================================================================================*/
+	/*Update*/
+	/*=================================================================================================*/
 	void Update () 
 	{
 		/*When the fire button is click start charging*/
@@ -89,9 +107,18 @@ public class fireScript : MonoBehaviour {
 		}
 
 		// Debugging info
+		/*
 		output = " curCharge: " + curCharge +
 			" curStage: " + curStage + 
 			" light.intensity: " + plasmaLight.intensity +
-			" light.position: " + plasmaLight.transform.position.x;
+			" light.position: " + plasmaLight.transform.position.x;/**/
+		var mouse = Input.mousePosition;
+		var screenPoint = Camera.main.WorldToScreenPoint (transform.position);
+		output = "VolX: " + Voltage.centerOfMass.x +
+			" VolY: " + Voltage.transform.position.y +
+			" mouseX: " + mouse.x +
+			" screenX: " + screenPoint.x +
+			" mouseY: " + mouse.y +
+			" screenY: " + screenPoint.y;
 	}
 }
