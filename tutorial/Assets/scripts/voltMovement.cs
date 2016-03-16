@@ -16,6 +16,7 @@ public class voltMovement : MonoBehaviour {
 	bool facingRight = true;
 	bool curfacingRight;
 	string output = "";
+	float hover = -4.5f;
 
 	/*This is voltage's fuel levels*
 	public int maxFuel = 100; /*max amount of fuel*
@@ -52,6 +53,9 @@ public class voltMovement : MonoBehaviour {
 			pressed = true;
 		} else if (drop && !isGrounded && !pressed) {
 			GetComponent<Rigidbody2D> ().velocity = new Vector2 (GetComponent<Rigidbody2D> ().velocity.x, dropBoost (GetComponent<Rigidbody2D> ().velocity.y));
+			pressed = true;
+		} else if (jumping && !isGrounded) {
+			GetComponent<Rigidbody2D> ().velocity = new Vector2 (GetComponent<Rigidbody2D> ().velocity.x, hovering (GetComponent<Rigidbody2D> ().velocity.y));
 			pressed = true;
 		}
 		else if (!jumping) {
@@ -97,7 +101,13 @@ public class voltMovement : MonoBehaviour {
 	float jumpBoost (float y) {
 		if (y > 0)
 			return y + .5f;
-		return .5f;
+		return -.5f;
+	}
+
+	float hovering (float y) {
+		if (y > hover)
+			return y;
+		return hover;
 	}
 
 	float dropBoost (float y) {
