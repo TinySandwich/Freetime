@@ -26,6 +26,12 @@ public class fireScript : MonoBehaviour {
 	public AudioClip charging3;
 	public AudioClip fire;
 
+	Animator animator;
+
+	void Start() {
+		animator = GetComponent<Animator> ();
+	}
+
 	void OnGUI(){
 		GUI.Label (new Rect (10, 10, 1000, 20), output);
 	}

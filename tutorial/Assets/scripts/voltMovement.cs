@@ -11,6 +11,7 @@ public class voltMovement : MonoBehaviour {
 	public Transform grounder;
 	public float radius = .8415132f;
 	public LayerMask foreGround;
+	Animator animator;
 
 	public float maxSpeed = 10f;
 	bool facingRight = true;
@@ -31,7 +32,7 @@ public class voltMovement : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+		animator = GetComponent<Animator> ();
 	}
 
 	// Update is called once per frame
@@ -81,6 +82,18 @@ public class voltMovement : MonoBehaviour {
 		if (curfacingRight != facingRight) {
 			facingRight = !facingRight;
 			Flip ();
+		}
+
+		if (Input.GetKey (KeyCode.D) && facingRight) {
+			animator.SetFloat ("Speed", 1); /*Flying forwards to the right*/
+		} else if (Input.GetKey (KeyCode.D) && !facingRight) {
+			animator.SetFloat ("Speed", -1); /*Flying backwards to the right*/
+		} else if (Input.GetKey (KeyCode.A) && facingRight) {
+			animator.SetFloat ("Speed", -1); /*Flying backwards to the left*/
+		} else if (Input.GetKey (KeyCode.A) && !facingRight) {
+			animator.SetFloat ("Speed", 1); /*Flying forwards to the left*/
+		} else {
+			animator.SetFloat ("Speed", 0); /*Standing Still*/
 		}
 
 		// Debugging info
