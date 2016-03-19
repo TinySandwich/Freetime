@@ -21,6 +21,11 @@ public class fireScript : MonoBehaviour {
 	public int stage3 = 500;
 	string output = "";
 
+	public AudioClip charging1;
+	public AudioClip charging2;
+	public AudioClip charging3;
+	public AudioClip fire;
+
 	void OnGUI(){
 		GUI.Label (new Rect (10, 10, 1000, 20), output);
 	}
@@ -56,10 +61,14 @@ public class fireScript : MonoBehaviour {
 	{
 		float myX = mouse.x - screenPoint.x;
 		float myY = mouse.y - screenPoint.y;
+		/* 
+		 * Try to find a way to determine mouse vs Voltage location from that fix the backward plasma.
+		 *
 		if ((mouse.x < 230f && mouse.x > screenPoint.x) || (mouse.x >= 230f && mouse.x < screenPoint.x))
 			myX = screenPoint.x - mouse.x;
 		if ((mouse.y < 330f && mouse.y > screenPoint.y) || (mouse.y >= 330f && mouse.y < screenPoint.y))
 			myY = screenPoint.y - mouse.y;
+		/**/
 
 		Vector2 myVector = new Vector2(myX, myY);
 		return myVector;
