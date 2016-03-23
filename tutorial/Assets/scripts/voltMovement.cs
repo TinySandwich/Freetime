@@ -84,6 +84,8 @@ public class voltMovement : MonoBehaviour {
 			Flip ();
 		}
 
+		bool standing = true;
+
 		if (Input.GetKey (KeyCode.D) && facingRight) {
 			animator.SetFloat ("Speed", 1); /*Flying forwards to the right*/
 		} else if (Input.GetKey (KeyCode.D) && !facingRight) {
@@ -94,6 +96,11 @@ public class voltMovement : MonoBehaviour {
 			animator.SetFloat ("Speed", 1); /*Flying forwards to the left*/
 		} else {
 			animator.SetFloat ("Speed", 0); /*Standing Still*/
+			standing = true;
+		}
+
+		if (standing) {
+			animator.SetBool ("Stationary", true);
 		}
 
 		// Debugging info
