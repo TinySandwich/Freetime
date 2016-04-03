@@ -91,6 +91,7 @@ public class fireScript : MonoBehaviour {
 			bulletClone = (Rigidbody2D)Instantiate (bCharge1, transform.position, transform.rotation);
 			//plasmaLight.transform.position = transform.position;
 			plasmaLight.intensity = 2;
+			animator.SetBool ("Charge", true); /*Charge animation*/
 		} 
 
 		/*When the fire button is released fire the charged bolt*/
@@ -100,6 +101,7 @@ public class fireScript : MonoBehaviour {
 			curStage = 1;
 			curCharge = 0;
 			plasmaLight.intensity = 0;
+			animator.SetBool ("Charge", false); /*End charging animation*/
 		} 
 
 		/*As the plasma is charged it begins to grow/**/
@@ -113,7 +115,6 @@ public class fireScript : MonoBehaviour {
 				curStage = 2;
 				Destroy (bulletClone.gameObject);
 				bulletClone = (Rigidbody2D)Instantiate (bCharge2, transform.position, transform.rotation);
-
 			} else if (curCharge >= stage3 && curStage != 3) {
 				curStage = 3;
 				Destroy (bulletClone.gameObject);
