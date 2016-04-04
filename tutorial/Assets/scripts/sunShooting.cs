@@ -3,7 +3,6 @@ using System.Collections;
 
 public class sunShooting : MonoBehaviour {
 
-	public Rigidbody2D player;
 	public int plasmaDamage = 30;
 	public AudioClip shotClip;
 	public float flashIntensity = 3f;
@@ -16,13 +15,18 @@ public class sunShooting : MonoBehaviour {
 	private SphereCollider col;
 	//private Transform player;
 	//private PlayerHealth playerHealth;
-	private bool shooting;
+
+	public bool shot;
+	public bool shooting;
+	public Rigidbody2D bCharge;
+	private Rigidbody2D bulletClone = new Rigidbody2D ();
+	public Light plasmaLight;
 
 	private int dancing;
+	public Rigidbody2D target;
 
 	void Awake()
 	{
-		anim = GetComponent<Animator> ();
 		sunLight = GetComponentInChildren<Light> ();
 	}
 
@@ -32,14 +36,5 @@ public class sunShooting : MonoBehaviour {
 	}
 
 	void Update() {
-		dancing += Random.Range (-1, 3);
-		if (dancing > 100) {
-			/*When the dancing is complete it fires at Voltage*/
-			animator.SetBool ("firing", true); /*Flying forwards to the left*/
-		}
-		if (dancing > 200) {
-			animator.SetBool ("firing", false);
-			dancing = 0;
-		}
 	}
 }
