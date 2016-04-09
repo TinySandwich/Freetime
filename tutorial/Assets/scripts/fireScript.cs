@@ -26,12 +26,6 @@ public class fireScript : MonoBehaviour {
 	public AudioClip charging3;
 	public AudioClip fire;
 
-	Animator animator;
-
-	void Start() {
-		animator = GetComponent<Animator> ();
-	}
-
 	void OnGUI(){
 		GUI.Label (new Rect (10, 10, 1000, 20), output);
 	}
@@ -91,7 +85,7 @@ public class fireScript : MonoBehaviour {
 			bulletClone = (Rigidbody2D)Instantiate (bCharge1, transform.position, transform.rotation);
 			//plasmaLight.transform.position = transform.position;
 			plasmaLight.intensity = 2;
-			animator.SetBool ("Charge", true); /*Charge animation*/
+
 		} 
 
 		/*When the fire button is released fire the charged bolt*/
@@ -101,7 +95,6 @@ public class fireScript : MonoBehaviour {
 			curStage = 1;
 			curCharge = 0;
 			plasmaLight.intensity = 0;
-			animator.SetBool ("Charge", false); /*End charging animation*/
 		} 
 
 		/*As the plasma is charged it begins to grow/**/

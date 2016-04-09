@@ -10,6 +10,12 @@ public class armAimAt : MonoBehaviour {
 	bool facingRight = true;
 	bool curfacingRight;
 
+	Animator animator;
+
+	void Start() {
+		animator = GetComponent<Animator> ();
+	}
+
 	void Update ()
 	{
 		var mouse = Input.mousePosition;

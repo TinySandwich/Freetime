@@ -110,6 +110,12 @@ public class voltMovement : MonoBehaviour {
 			" Face: " + facingRight.ToString() +
 			" angle: " + angle.ToString() +s
 			" velocity y: " + GetComponent<Rigidbody2D> ().velocity.y;*/
+
+		if (Input.GetButtonDown ("Fire1")) { 
+			animator.SetBool ("Charge", true); /*Charge animation*/
+		} else if (Input.GetButtonUp ("Fire1")) { 
+			animator.SetBool ("Charge", false); /*End charging animation*/
+		}
 	}
 
 	void Flip(){
