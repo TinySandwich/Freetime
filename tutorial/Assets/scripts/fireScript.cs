@@ -102,7 +102,7 @@ public class fireScript : MonoBehaviour {
 			curCharge++;
 			bulletClone.transform.position = transform.position;
 			//plasmaLight.transform.position = transform.position;
-			plasmaLight.intensity = curStage * 2;
+			plasmaLight.intensity = (curStage * 2) + Random.Range(-1,1);
 
 			if (curCharge >= stage2 && curCharge < stage3 && curStage != 2) { 
 				curStage = 2;

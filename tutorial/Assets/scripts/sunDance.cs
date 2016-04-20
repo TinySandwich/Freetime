@@ -18,7 +18,7 @@ public class sunDance : MonoBehaviour {
 	}
 
 	void Update() {
-		dancing += Random.Range (-1, 3);
+		dancing += Random.Range (-3, 6);
 		if (shot) {
 			shot = false;
 		} else if (charging && dancing > 200) {
@@ -30,7 +30,7 @@ public class sunDance : MonoBehaviour {
 			dancing = 0;
 			charging = false;
 		} else if (charging) {
-			plasmaLight.intensity = 2;
+			plasmaLight.intensity = Random.Range(1, 5);
 		} else if (dancing > 100) {
 			/*When the dancing is complete it fires at Voltage*/
 			animator.SetBool ("firing", true); /*Flying forwards to the left*/
