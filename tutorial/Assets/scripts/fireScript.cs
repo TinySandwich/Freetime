@@ -123,11 +123,12 @@ public class fireScript : MonoBehaviour {
 			" light.position: " + plasmaLight.transform.position.x;/**/
 		var mouse = Input.mousePosition;
 		var screenPoint = Camera.main.WorldToScreenPoint (transform.position);
-		output = "VolX: " + Voltage.centerOfMass.x +
+		/*output = "VolX: " + Voltage.centerOfMass.x +
 			" VolY: " + Voltage.transform.position.y +
 			" mouseX: " + mouse.x +
 			" screenX: " + screenPoint.x +
 			" mouseY: " + mouse.y +
-			" screenY: " + screenPoint.y;
+			" screenY: " + screenPoint.y;*/
+		output = "FIGHT and SURVIVE!";
 	}
 }

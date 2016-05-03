@@ -11,6 +11,7 @@ public class voltMovement : MonoBehaviour {
 	public Transform grounder;
 	public float radius = .8415132f;
 	public LayerMask foreGround;
+	public Transform camera;
 	Animator animator;
 
 	public float maxSpeed = 10f;
@@ -115,6 +116,15 @@ public class voltMovement : MonoBehaviour {
 			animator.SetBool ("Charge", true); /*Charge animation*/
 		} else if (Input.GetButtonUp ("Fire1")) { 
 			animator.SetBool ("Charge", false); /*End charging animation*/
+		}
+
+		float playerY = transform.position.y;
+		Vector3 playerSpawn = new Vector3 (-7.49f, 4.95f, 0);
+
+		if (playerY < -50) {
+			this.transform.position = playerSpawn;
+			GetComponent<Rigidbody2D> ().velocity = new Vector2 (0, 0);
+
 		}
 	}
 
