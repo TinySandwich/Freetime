@@ -19,6 +19,7 @@ public class voltMovement : MonoBehaviour {
 	bool curfacingRight;
 	string output = "";
 	float hover = -4.5f;
+	float maxHeight = 0;
 
 	/*This is voltage's fuel levels*
 	public int maxFuel = 100; /*max amount of fuel*
@@ -28,7 +29,7 @@ public class voltMovement : MonoBehaviour {
 	public int recFuel = 2; /*fuel recovery rate*/
 
 	void OnGUI(){
-		GUI.Label (new Rect (10, 10, 1000, 20), output);
+		GUI.Label (new Rect (10, 25, 1000, 20), output);
 	}
 
 	// Use this for initialization
@@ -105,12 +106,13 @@ public class voltMovement : MonoBehaviour {
 		}
 
 		// Debugging info
-		/*output = /*"offsetX: " + offset.x.ToString() + 
+		output = "Max height: " + maxHeight;
+			/*"offsetX: " + offset.x.ToString() + 
 			" thisX: " + transform.position.x.ToString() + 
 			" curFace: " + curfacingRight.ToString() + 
 			" Face: " + facingRight.ToString() +
 			" angle: " + angle.ToString() +s
-			" velocity y: " + GetComponent<Rigidbody2D> ().velocity.y;*/
+			" velocity y: " + GetComponent<Rigidbody2D> ().velocity.y;/**/
 
 		if (Input.GetButtonDown ("Fire1")) { 
 			animator.SetBool ("Charge", true); /*Charge animation*/
@@ -124,7 +126,9 @@ public class voltMovement : MonoBehaviour {
 		if (playerY < -50) {
 			this.transform.position = playerSpawn;
 			GetComponent<Rigidbody2D> ().velocity = new Vector2 (0, 0);
-
+		}
+		if (playerY > maxHeight) {
+			maxHeight = playerY;
 		}
 	}
 
