@@ -3,7 +3,11 @@ using System.Collections;
 
 public class rotate : MonoBehaviour {
 
-	public float speed = Random.Range(100,300);
+	public float speed = 1;
+
+	void Start () {
+		speed = Random.Range(100,300);
+	}
 
 	// Use this for initialization
 	void Awake () {
