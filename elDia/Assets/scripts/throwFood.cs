@@ -19,13 +19,13 @@ public class throwFood : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		delay = Random.Range (5, 20);
+		delay = Random.Range (2, 10);
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if (delay < 0) {
-			delay = Random.Range (1, 6);
+			delay = Random.Range (1, 4);
 			launch ();
 		} else {
 			delay -= Time.deltaTime;
