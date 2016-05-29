@@ -1,12 +1,13 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class flight : MonoBehaviour {
 
 	public float flyspeed = 2f;
 	public float vspeed = 4f;
 	public float brakePower = 2f;
-	private Vector3 moveDirection = Vector3.zero;
 	public Camera world;
 
 	private Rect cameraRect = new Rect();
@@ -44,6 +45,7 @@ public class flight : MonoBehaviour {
 
 	public void LoadScene(int level)
 	{
-		Application.LoadLevel (level);
+		PlayerPrefs.SetFloat ("finalScore", DisplayScore.time);
+		SceneManager.LoadScene (level);
 	}
 }

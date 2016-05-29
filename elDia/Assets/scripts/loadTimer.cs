@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class loadTimer : MonoBehaviour {
 	float timeLeft = 3.0f;
@@ -14,6 +15,6 @@ public class loadTimer : MonoBehaviour {
 
 	public void LoadScene(int level)
 	{
-		Application.LoadLevel (level);
+		SceneManager.LoadScene (level);
 	}
 }

@@ -9,7 +9,7 @@ public class knockBackCollision : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D coll) {
 		/*Check to see if the object collided with is the player if so. Knock the player back and delete the object.*/
 		if (coll.gameObject.tag == "Player") {
-			timeMultiplier = Time.timeSinceLevelLoad / 5;
+			timeMultiplier = Time.timeSinceLevelLoad / 10;
 
 			/*Keep the position the same except move the player backwards equal to kbDist multiplied by the timeMultiplier*/
 			float knockback = kbDist * timeMultiplier;
