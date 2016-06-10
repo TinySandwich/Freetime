@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class flight : MonoBehaviour {
 
-	public float flyspeed = 2f;
+	public float flyspeed = 4f;
 	public float vspeed = 4f;
 	public float brakePower = 2f;
 	public Camera world;

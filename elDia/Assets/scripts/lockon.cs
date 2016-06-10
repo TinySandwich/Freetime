@@ -14,7 +14,11 @@ public class lockon : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Vector2 targetVec = new Vector2 (target.position.x - transform.position.x, target.position.y - transform.position.y);
+		float tarX = target.position.x - transform.position.x;
+		if (tarX < speed) {
+			tarX = transform.position.x + speed;
+		}
+		Vector2 targetVec = new Vector2 (tarX, target.position.y - transform.position.y);
 		targetVec.Normalize ();
 		projectile.velocity = targetVec * speed;
 
