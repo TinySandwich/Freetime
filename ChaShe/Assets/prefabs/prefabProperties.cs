@@ -1,9 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CheckSave : MonoBehaviour {
+public class prefabProperties : MonoBehaviour {
+
+	// Use this for initialization
+	void Start () {
+	
+	}
+	
 	// Update is called once per frame
 	void Update () {
-		
+	
 	}
 }

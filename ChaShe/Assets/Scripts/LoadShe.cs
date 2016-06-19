@@ -5,25 +5,24 @@ public class LoadShe : MonoBehaviour {
 
 	public void onClick() {
 		// Check Saved
+		if (PlayerPrefs.GetInt ("saved") == 0) {
+			// ask save
 
-		LoadSheet ();
-
-		// If it returns cleanly update loaded to true
-		// update saved to false
-	}
-
-	void LoadSheet (){
-		return;
-	}
-
-
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+			//if (!cancelled) {
+				//Try to open file
+				// if (successful)
+				////Update saved as false
+				//PlayerPrefs.SetInt ("saved", 0);
+				////Update loaded as true
+				//PlayerPrefs.SetInt ("active", 1);
+			//}
+		} else {
+			//Try to open file
+			// if (successful)
+			////Update saved as false
+			//PlayerPrefs.SetInt ("saved", 0);
+			////Update loaded as true
+			//PlayerPrefs.SetInt ("active", 1);
+		}
 	}
 }

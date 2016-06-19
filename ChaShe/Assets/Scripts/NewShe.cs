@@ -5,28 +5,24 @@ using UnityEngine.SceneManagement;
 public class NewShe : MonoBehaviour {
 
 	public void onClick () {
-		//Check saved
+		//Check saved if the sheet is already active
+		if (PlayerPrefs.GetInt ("saved") == 0 && PlayerPrefs.GetInt ("active") != 0) {
+			// ask save
+			//if (!canceled) {
+			SceneManager.LoadScene (1);
 
-		SceneManager.LoadScene (1);
-		CreateNewSheet ();
+			//Update saved as false
+			PlayerPrefs.SetInt ("saved", 0);
+			//Update loaded as true
+			PlayerPrefs.SetInt ("active", 1);
+			//}
+		} else {
+			SceneManager.LoadScene (1);
 
-		//Update saved as false
-		//Update loaded as true
-	}
-
-	public void CreateNewSheet(){
-		//Load an empty WorkSpace
-
-
-		return;
-	}
-
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
+			//Update saved as false
+			PlayerPrefs.SetInt ("saved", 0);
+			//Update loaded as true
+			PlayerPrefs.SetInt ("active", 1);
+		}
 	}
 }
