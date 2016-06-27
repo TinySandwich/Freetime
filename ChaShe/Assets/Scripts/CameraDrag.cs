@@ -3,13 +3,13 @@ using System.Collections;
 
 public class CameraDrag : MonoBehaviour {
 
-	public float dragSpeed = 5;
+	public float dragSpeed = 20;
 	private Vector3 dragOrigin;
 
-	public float outerLeft = -50f;
+	/*public float outerLeft = -50f;
 	public float outerRight = 250f;
 	public float outerTop = 150f;
-	public float outerBottom = 150f;
+	public float outerBottom = 150f;*/
 
 	private string output = "";
 
@@ -24,18 +24,19 @@ public class CameraDrag : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetMouseButtonDown (0)) {
+		if (!Input.GetMouseButton (1)) {
 			dragOrigin = Input.mousePosition;
 			return;
 		}
-		if (!Input.GetMouseButton (0)) {
+		/*if (Input.GetMouseButtonDown (1)) {
+			dragOrigin = Input.mousePosition;
 			return;
-		}
+		}/**/
 
 		Vector3 pos = Camera.main.ScreenToViewportPoint (dragOrigin - Input.mousePosition);
 		Vector3 move = new Vector3 (pos.x * dragSpeed, pos.y * dragSpeed, 0);
 
-		transform.Translate (move, Space.World);
+		transform.Translate (move, Space.World);/**/
 
 		output = "X: " + Input.mousePosition.x + " Y: " + Input.mousePosition.y + 
 			"\ncamX: " + transform.position.x + " camY: " + transform.position.y;
