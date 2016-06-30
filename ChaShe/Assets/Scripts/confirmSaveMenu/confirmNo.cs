@@ -7,6 +7,7 @@ public class confirmNo : MonoBehaviour {
 	public GameObject myMenu;
 
 	public void onClick () {
-
+		PlayerPrefs.DeleteAll ();
+		Application.Quit ();
 	}
 }
