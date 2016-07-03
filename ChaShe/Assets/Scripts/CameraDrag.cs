@@ -61,8 +61,8 @@ public class CameraDrag : MonoBehaviour {
 
 		transform.Translate (move, Space.World);/**/
 
-		output = /*"X: " + Input.mousePosition.x + " Y: " + Input.mousePosition.y + 
-			"\ncamX: " + transform.position.x + " camY: " + transform.position.y;/**/
-			"wheel" + Input.GetAxis ("Mouse ScrollWheel");
+		/*output = /*"X: " + Input.mousePosition.x + " Y: " + Input.mousePosition.y + 
+			"\ncamX: " + transform.position.x + " camY: " + transform.position.y;/*
+			"wheel" + Input.GetAxis ("Mouse ScrollWheel");/**/
 	}
 }

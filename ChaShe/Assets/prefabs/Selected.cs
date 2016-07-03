@@ -24,7 +24,7 @@ public class Selected : MonoBehaviour {
 	}
 
 	void Update () {
-		if (selected) {
+		if (transform.tag.Equals("select")) {
 			mySelect.SetActive (true);
 		} else {
 			mySelect.SetActive (false);

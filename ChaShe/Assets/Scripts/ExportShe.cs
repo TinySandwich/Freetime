@@ -7,7 +7,7 @@ public class ExportShe : MonoBehaviour {
 	public GameObject myUI;
 	public int resWidth = 2550;
 	public int resHeight = 3300;
-	public Camera camera;
+	public Camera myCamera;
 
 	//private bool takeHiResShot = false;
 
@@ -45,14 +45,15 @@ public class ExportShe : MonoBehaviour {
 		filename = ScreenShotName (resWidth, resHeight);
 
 		if (filename != "") {
+			myCamera.gameObject.SetActive (true);
 			myUI.SetActive (false);
 			RenderTexture rt = new RenderTexture (resWidth, resHeight, 24);
-			camera.targetTexture = rt;
+			myCamera.targetTexture = rt;
 			Texture2D screenShot = new Texture2D (resWidth, resHeight, TextureFormat.RGB24, false);
-			camera.Render ();
+			myCamera.Render ();
 			RenderTexture.active = rt;
 			screenShot.ReadPixels (new Rect (0, 0, resWidth, resHeight), 0, 0);
-			camera.targetTexture = null;
+			myCamera.targetTexture = null;
 			RenderTexture.active = null;
 			Destroy (rt);
 			byte[] bytes = screenShot.EncodeToPNG ();
@@ -60,7 +61,8 @@ public class ExportShe : MonoBehaviour {
 			Debug.Log (string.Format ("Saved worspace to: {0}", filename));
 
 			myUI.SetActive (true);
-			output = "File saved to: " + filename;
+			myCamera.gameObject.SetActive (false);
+			//output = "File saved to: " + filename;
 		}
 	}
 
