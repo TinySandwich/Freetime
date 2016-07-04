@@ -5,13 +5,14 @@ using UnityEngine.EventSystems;
 
 public class ClickSelect : MonoBehaviour {
 
-	private string output = "";
+	/*private string output = "";
 	private bool selected = false;
 	private bool skip = false;
 	Ray myRay;
 	RaycastHit hit;
 	public Camera myCamera;
 	private GameObject myGameObject;
+	private EventSystem system;
 
 	private InputField Xin;
 	private InputField Wid;
@@ -22,6 +23,8 @@ public class ClickSelect : MonoBehaviour {
 	private InputField Tex;
 
 	void Start () {
+		system = EventSystem.current;
+
 		Xin = GameObject.FindWithTag ("XIn").GetComponent<InputField>();
 		Wid = GameObject.FindWithTag ("WidthIn").GetComponent<InputField>();
 		Yin = GameObject.FindWithTag ("YIn").GetComponent<InputField>();
@@ -42,11 +45,12 @@ public class ClickSelect : MonoBehaviour {
 
 	void OnMouseDown() {
 		if (Input.GetMouseButtonDown (0)) {
+			PlayerPrefs.SetInt ("manual", 0);
 			selected = true;
 			skip = true;
 			output = "selected: " + transform.ToString ();
 			transform.tag = "selected";
-			/*Update the data fields with position data*/
+			/*Update the data fields with position data
 			Xin.text = transform.position.x.ToString ();
 			Wid.text = "Hi I'm the width";
 			Yin.text = transform.position.y.ToString ();
@@ -54,14 +58,16 @@ public class ClickSelect : MonoBehaviour {
 			Ord.text = transform.position.z.ToString ();
 			Nam.text = transform.name.ToString ();
 			Tex.text = "text";
+
+			system.SetSelectedGameObject (Xin.gameObject);
+			PlayerPrefs.SetInt ("tab", 0);
+			PlayerPrefs.SetInt ("manual", 1);
 		}
-	}/**/
+	}/*
 
 	// Update is called once per frame
 	void Update () {
-		if (skip) {
-			skip = false;
-		} else if (Input.GetMouseButtonDown (0) && !selected) {
+		if (Input.GetMouseButtonDown (0) && !selected) {
 			output = "";
 			transform.tag = " ";
 		} else if (selected) {
@@ -69,13 +75,11 @@ public class ClickSelect : MonoBehaviour {
 		}
 
 		selected = false;
-
-		/*Update the data fields*/
 	}
 
 	public void selectObj ()
 	{
 		Start ();
 		OnMouseDown ();
-	}
+	}/**/
 }

@@ -8,6 +8,7 @@ public class SpawnButton : MonoBehaviour {
 	public GameObject myObject;
 	public Camera myCam; // items will spawn in the center of the camera.
 	public Selectable myX; // this will place the focus in the X field
+	private GameObject oldSelect;
 	private GameObject objClone;
 	private ClickSelect objSelect;
 	private EventSystem system;
@@ -36,9 +37,15 @@ public class SpawnButton : MonoBehaviour {
 		Vector3 myPos = new Vector3 (myCam.transform.position.x, myCam.transform.position.y, -1);
 		objClone = (GameObject)Instantiate (myObject, myPos, transform.rotation);
 
-
+		try {
+			oldSelect = GameObject.FindWithTag ("selected").GetComponent<GameObject>();
+			oldSelect.tag = " ";
+		}
+		catch {
+			oldSelect = objClone;
+		}
 		//output = "selected: " + transform.ToString ();
-		transform.tag = "selected";
+		objClone.transform.tag = "selected";
 		/*Update the data fields with position data*/
 		Xin.text = objClone.transform.position.x.ToString ();
 		Wid.text = "Hi I'm the width";
