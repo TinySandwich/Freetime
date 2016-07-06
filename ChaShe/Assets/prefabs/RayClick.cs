@@ -7,6 +7,7 @@ public class RayClick : MonoBehaviour {
 
 	private Camera myCamera;
 
+	private Vector3 dragOrigin;
 	private EventSystem system;
 	private string output = "";
 
@@ -18,7 +19,8 @@ public class RayClick : MonoBehaviour {
 	private InputField Nam;
 	private InputField Tex;
 
-	private GameObject curSelect;
+	public GameObject curSelect;
+
 
 	void Start () {
 		myCamera = Camera.main.GetComponent<Camera> ();
@@ -47,6 +49,7 @@ public class RayClick : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
 		if (Input.GetMouseButtonDown (0)) {
 			Ray myRay = myCamera.ScreenPointToRay (Input.mousePosition);
 			RaycastHit myHit;
@@ -55,34 +58,48 @@ public class RayClick : MonoBehaviour {
 				curSelect = myHit.transform.gameObject;
 				curSelect.tag = "selected";
 
-				Xin.text = curSelect.transform.position.x.ToString ();
-				Wid.text = "Hi I'm the width";
-				Yin.text = curSelect.transform.position.y.ToString ();
-				Hei.text = "I'm the height";
-				Ord.text = curSelect.transform.position.z.ToString ();
-				Nam.text = curSelect.transform.name.ToString ();
-				Tex.text = "text";
+				setFields (curSelect);
 
 				system.SetSelectedGameObject (Xin.gameObject);
+				PlayerPrefs.SetInt ("tab", 0);
 			}
-		} else if (curSelect.tag.Equals("selected")) {
+		}
+
+		if (curSelect.tag.Equals("selected")) {
+			//curSelect = GameObject.FindWithTag ("selected").GetComponent<GameObject>;
 			float newX = 0;
+			float newW = 0;
 			float newY = 0;
+			float newH = 0;
 			float newZ = 0;
+			//X position
 			try {
 				newX = float.Parse (Xin.text.ToString ());
 			}
 			catch {
 				newX = 0;
 			}
-				
+			//Width
+			try {
+				newW = float.Parse (Wid.text.ToString ());
+			}
+			catch {
+				newW = 0;
+			}
+			//Y position
 			try {
 				newY = float.Parse (Yin.text.ToString ());
 			}
 			catch {
 				newY = 0;
 			}
-
+			//Height
+			try {
+				newH = float.Parse (Hei.text.ToString ());
+			}
+			catch {
+				newH = 0;
+			}
 			try {
 				newZ = float.Parse (Ord.text.ToString ());
 			}
@@ -90,8 +107,49 @@ public class RayClick : MonoBehaviour {
 				newZ = 0;
 			}
 				
-			curSelect.transform.position = new Vector3(newX, newY, newZ);
+			curSelect.transform.position = new Vector3(newX, newY, newZ * -1);
+			curSelect.transform.localScale = new Vector3 (newW, newH);
 			output = Xin.text.ToString ();
 		}
+
+		if (!Input.GetMouseButton (0)) {
+			dragOrigin = Input.mousePosition;
+			return;
+		}
+
+		Vector3 myPos = dragOrigin - Input.mousePosition;
+		curSelect.transform.position = curSelect.transform.position - myPos;
+		if (curSelect.transform.position.x < -100)
+			curSelect.transform.position = new Vector3 (-100, curSelect.transform.position.y, curSelect.transform.position.z);
+		if (curSelect.transform.position.x > 800)
+			curSelect.transform.position = new Vector3 (800, curSelect.transform.position.y, curSelect.transform.position.z);
+		if (curSelect.transform.position.y < -200)
+			curSelect.transform.position = new Vector3 (curSelect.transform.position.x, -200, curSelect.transform.position.z);
+		if (curSelect.transform.position.y > 800)
+			curSelect.transform.position = new Vector3 (curSelect.transform.position.x, 800, curSelect.transform.position.z);
+		dragOrigin = Input.mousePosition;
+
+		if (curSelect.tag.Equals ("selected")) {
+			setFields (curSelect);
+		}
+	}
+
+	public void setSelect (GameObject myObject)
+	{
+		curSelect.tag = " ";
+		curSelect = myObject;
+		curSelect.tag = "selected";
+	}
+
+	private void setFields (GameObject mySel)
+	{
+		Xin.text = mySel.transform.position.x.ToString ();
+		Wid.text = mySel.transform.localScale.x.ToString();
+		Yin.text = mySel.transform.position.y.ToString ();
+		Hei.text = mySel.transform.localScale.y.ToString();
+		float ordTemp = mySel.transform.position.z * -1;
+		Ord.text = ordTemp.ToString ();
+		Nam.text = mySel.transform.name.ToString ();
+		Tex.text = "text";
 	}
 }

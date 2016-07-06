@@ -10,7 +10,6 @@ public class SpawnButton : MonoBehaviour {
 	public Selectable myX; // this will place the focus in the X field
 	private GameObject oldSelect;
 	private GameObject objClone;
-	private ClickSelect objSelect;
 	private EventSystem system;
 
 	private InputField Xin;
@@ -20,6 +19,9 @@ public class SpawnButton : MonoBehaviour {
 	private InputField Ord;
 	private InputField Nam;
 	private InputField Tex;
+
+	private RayClick mySelector;
+	private Camera newCam;
 
 	void Start () {
 		system = EventSystem.current;
@@ -38,24 +40,28 @@ public class SpawnButton : MonoBehaviour {
 		objClone = (GameObject)Instantiate (myObject, myPos, transform.rotation);
 
 		try {
-			oldSelect = GameObject.FindWithTag ("selected").GetComponent<GameObject>();
+			//Must go into the RayClick script and change the variable.
+			newCam = Camera.main.GetComponent<Camera> ();
+			mySelector = newCam.GetComponent<RayClick>();
+			oldSelect = mySelector.curSelect;
 			oldSelect.tag = " ";
 		}
 		catch {
 			oldSelect = objClone;
 		}
-		//output = "selected: " + transform.ToString ();
-		objClone.transform.tag = "selected";
+
 		/*Update the data fields with position data*/
 		Xin.text = objClone.transform.position.x.ToString ();
-		Wid.text = "Hi I'm the width";
+		Wid.text = objClone.transform.localScale.x.ToString();
 		Yin.text = objClone.transform.position.y.ToString ();
-		Hei.text = "I'm the height";
-		Ord.text = objClone.transform.position.z.ToString ();
+		Hei.text = objClone.transform.localScale.y.ToString();
+		float ordTemp = objClone.transform.position.z * -1;
+		Ord.text = ordTemp.ToString ();
 		Nam.text = objClone.transform.name.ToString ();
 		Tex.text = "text";
 
 		system.SetSelectedGameObject (myX.gameObject);
 		PlayerPrefs.SetInt ("tab", 0);
+		mySelector.setSelect (objClone);
 	}
 }

@@ -52,7 +52,19 @@ public class CameraDrag : MonoBehaviour {
 			return;
 		}
 
-		Vector3 pos = Camera.main.ScreenToViewportPoint (dragOrigin - Input.mousePosition);
+		Vector3 myPos = dragOrigin - Input.mousePosition;
+		transform.position = transform.position + myPos;
+		if (transform.position.x < -100)
+			transform.position = new Vector3 (-100, transform.position.y, transform.position.z);
+		if (transform.position.x > 800)
+			transform.position = new Vector3 (800, transform.position.y, transform.position.z);
+		if (transform.position.y < -200)
+			transform.position = new Vector3 (transform.position.x, -200, transform.position.z);
+		if (transform.position.y > 800)
+			transform.position = new Vector3 (transform.position.x, 800, transform.position.z);
+		dragOrigin = Input.mousePosition;
+
+		/*Vector3 pos = Camera.main.ScreenToViewportPoint (dragOrigin - Input.mousePosition);
 		Vector3 move = new Vector3 (pos.x * dragSpeed, pos.y * dragSpeed, 0);
 
 		transform.position = transform.position + move;
