@@ -9,7 +9,7 @@ public class RayClick : MonoBehaviour {
 
 	private Vector3 dragOrigin;
 	private EventSystem system;
-	private string output = "";
+	public string output = "";
 
 	private InputField Xin;
 	private InputField Wid;
@@ -109,7 +109,7 @@ public class RayClick : MonoBehaviour {
 				
 			curSelect.transform.position = new Vector3(newX, newY, newZ * -1);
 			curSelect.transform.localScale = new Vector3 (newW, newH);
-			output = Xin.text.ToString ();
+			//output = Xin.text.ToString ();
 		}
 
 		if (!Input.GetMouseButton (0)) {
@@ -151,5 +151,15 @@ public class RayClick : MonoBehaviour {
 		Ord.text = ordTemp.ToString ();
 		Nam.text = mySel.transform.name.ToString ();
 		Tex.text = "text";
+		output = "Selected: " + mySel.name.ToString();
+	}
+
+	public void deleteSelect ()
+	{
+		if (curSelect.tag.Equals ("selected")) {
+			curSelect.tag = " ";
+			DestroyObject (curSelect.gameObject);
+			curSelect = new GameObject();
+		}
 	}
 }

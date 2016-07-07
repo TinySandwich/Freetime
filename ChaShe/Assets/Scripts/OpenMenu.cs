@@ -6,17 +6,23 @@ public class OpenMenu : MonoBehaviour {
 
 	private bool paused = false;
 	public GameObject myMenu;
+	public GameObject PanelB;
+	public GameObject PanelR;
 		
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetKeyDown ("escape")) {
 			if (!paused) {
 				//show menu
-				myMenu.SetActive(true);
+				PanelB.SetActive (false);
+				PanelR.SetActive (false);
+				myMenu.SetActive (true);
 				paused = true;
 			} else {
 				//hide menu
-				myMenu.SetActive(false);
+				PanelB.SetActive (true);
+				PanelR.SetActive (true);
+				myMenu.SetActive (false);
 				paused = false;
 			}
 		}

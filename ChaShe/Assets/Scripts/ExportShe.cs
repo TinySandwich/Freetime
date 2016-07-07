@@ -62,7 +62,9 @@ public class ExportShe : MonoBehaviour {
 
 			myUI.SetActive (true);
 			myCamera.gameObject.SetActive (false);
-			//output = "File saved to: " + filename;
+			Camera newCam = Camera.main.GetComponent<Camera> ();
+			RayClick mySelector = newCam.GetComponent<RayClick>();
+			mySelector.output = "File saved to: " + filename;
 		}
 	}
 
