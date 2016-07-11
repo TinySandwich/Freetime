@@ -8,6 +8,7 @@ public class ExportShe : MonoBehaviour {
 	public int resWidth = 2550;
 	public int resHeight = 3300;
 	public Camera myCamera;
+	public GameObject bg;
 
 	//private bool takeHiResShot = false;
 
@@ -33,20 +34,31 @@ public class ExportShe : MonoBehaviour {
 		return UnityEditor.EditorUtility.SaveFilePanel ("screenShot", "{0}", "mySheet", "png");
 		#endif
 
-		return Application.dataPath + "/myScreen.png";
+		return Application.dataPath + "/myScreen" + System.DateTime.Now.ToString ("yyyy-MM-dd_HH-mm-ss") + ".png";
 		/*return string.Format ("{0}/saves/screen_{1}x{2}_{3}.png,
 			Application.dataPath,
 			width, height,
 			System.DateTime.Now.ToString ("yyyy-MM-dd_HH-mm-ss"));/**/
 	}
 
+	public string getScreenShotName (int width, int height)
+	{
+		return ScreenShotName (width, height);
+	}
+
+	/*Main method for actually exporting information*/
 	public void onClick() {
 		string filename = "";
 		filename = ScreenShotName (resWidth, resHeight);
 
+		// This check is to make sure the method above did not fail.
 		if (filename != "") {
+			/*Remove background clutter*/
 			myCamera.gameObject.SetActive (true);
 			myUI.SetActive (false);
+			bg.SetActive (false);
+
+			/*Create the texture itself by taking a rendered screenshot*/
 			RenderTexture rt = new RenderTexture (resWidth, resHeight, 24);
 			myCamera.targetTexture = rt;
 			Texture2D screenShot = new Texture2D (resWidth, resHeight, TextureFormat.RGB24, false);
@@ -55,11 +67,15 @@ public class ExportShe : MonoBehaviour {
 			screenShot.ReadPixels (new Rect (0, 0, resWidth, resHeight), 0, 0);
 			myCamera.targetTexture = null;
 			RenderTexture.active = null;
+
+			/*Memory management, not sure it's necessary*/
 			Destroy (rt);
 			byte[] bytes = screenShot.EncodeToPNG ();
 			System.IO.File.WriteAllBytes (filename, bytes);
 			Debug.Log (string.Format ("Saved worspace to: {0}", filename));
 
+			/*Reactivate the background objects*/
+			bg.SetActive (true);
 			myUI.SetActive (true);
 			myCamera.gameObject.SetActive (false);
 			Camera newCam = Camera.main.GetComponent<Camera> ();
@@ -68,7 +84,9 @@ public class ExportShe : MonoBehaviour {
 		}
 	}
 
-/*	public IEnumerator onClick () {
+/*	First attempt
+ * 
+    public IEnumerator onClick () {
 		//Create texture for export
 		yield return UploadPNG();
 

@@ -31,7 +31,6 @@ public class SpawnButton : MonoBehaviour {
 		Yin = GameObject.FindWithTag ("YIn").GetComponent<InputField>();
 		Hei = GameObject.FindWithTag ("HeightIn").GetComponent<InputField>();
 		Ord = GameObject.FindWithTag ("OrderIn").GetComponent<InputField>();
-		Nam = GameObject.FindWithTag ("NameIn").GetComponent<InputField>();
 		Tex = GameObject.FindWithTag ("TextIn").GetComponent<InputField>();
 	}
 
@@ -57,8 +56,11 @@ public class SpawnButton : MonoBehaviour {
 		Hei.text = objClone.transform.localScale.y.ToString();
 		float ordTemp = objClone.transform.position.z * -1;
 		Ord.text = ordTemp.ToString ();
-		Nam.text = objClone.transform.name.ToString ();
-		Tex.text = "text";
+		if (objClone.name.Contains("Text"))
+			Tex.text = objClone.GetComponent<TextMesh> ().text;
+		else {
+			Tex.text = "text";
+		}
 
 		system.SetSelectedGameObject (myX.gameObject);
 		PlayerPrefs.SetInt ("tab", 0);

@@ -10,7 +10,7 @@ public class FieldTab : MonoBehaviour {
 	public Selectable fouField;
 	public Selectable fivField;
 	public Selectable sixField;
-	public Selectable sevField;
+	//public Selectable sevField;
 	private EventSystem system;
 	private Selectable[] mySelectables;
 
@@ -25,7 +25,7 @@ public class FieldTab : MonoBehaviour {
 		mySelectables [3] = fouField;
 		mySelectables [4] = fivField;
 		mySelectables [5] = sixField;
-		mySelectables [6] = sevField;
+		//mySelectables [6] = sevField;
 	}
 
 	void Update () {
@@ -33,12 +33,12 @@ public class FieldTab : MonoBehaviour {
 			int myLoc = PlayerPrefs.GetInt ("tab");
 			myLoc--;
 			if (myLoc < 0)
-				myLoc = 6; // if they shift+tab back past the first field, need to go to the end field
+				myLoc = 5; // if they shift+tab back past the first field, need to go to the end field
 			system.SetSelectedGameObject (mySelectables[myLoc].gameObject);
 			PlayerPrefs.SetInt ("tab", myLoc);
 		} else if (Input.GetKeyDown (KeyCode.Tab)) {
 			int myLoc = PlayerPrefs.GetInt ("tab");
-			myLoc = (myLoc + 1) % 7; // if they tab past the last field, need to go to first field
+			myLoc = (myLoc + 1) % 6; // if they tab past the last field, need to go to first field
 			system.SetSelectedGameObject (mySelectables[myLoc].gameObject);
 			PlayerPrefs.SetInt ("tab", myLoc);
 		} 

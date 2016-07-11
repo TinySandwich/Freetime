@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 
 public class RayClick : MonoBehaviour {
 
-	private Camera myCamera;
+	public Camera myCamera;
 
 	private Vector3 dragOrigin;
 	private EventSystem system;
@@ -16,14 +16,16 @@ public class RayClick : MonoBehaviour {
 	private InputField Yin;
 	private InputField Hei;
 	private InputField Ord;
-	private InputField Nam;
 	private InputField Tex;
 
 	public GameObject curSelect;
+	private GameObject emptyObject;
 
+	private int xtile;
+	private int ytile;
 
 	void Start () {
-		myCamera = Camera.main.GetComponent<Camera> ();
+		//myCamera = Camera.main.GetComponent<Camera> ();
 
 		system = EventSystem.current;
 
@@ -32,10 +34,15 @@ public class RayClick : MonoBehaviour {
 		Yin = GameObject.FindWithTag ("YIn").GetComponent<InputField>();
 		Hei = GameObject.FindWithTag ("HeightIn").GetComponent<InputField>();
 		Ord = GameObject.FindWithTag ("OrderIn").GetComponent<InputField>();
-		Nam = GameObject.FindWithTag ("NameIn").GetComponent<InputField>();
 		Tex = GameObject.FindWithTag ("TextIn").GetComponent<InputField>();
 
-		curSelect = new GameObject();
+		emptyObject = new GameObject ();
+		emptyObject.tag = " ";
+		curSelect = emptyObject;
+		curSelect.tag = " ";
+
+		xtile = 1;
+		ytile = 1;
 	}
 
 	void OnGUI() {
@@ -49,11 +56,11 @@ public class RayClick : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
+		// The check to set the selected object
 		if (Input.GetMouseButtonDown (0)) {
 			Ray myRay = myCamera.ScreenPointToRay (Input.mousePosition);
 			RaycastHit myHit;
-			if (Physics.Raycast (myRay, out myHit)) {
+			if (Physics.Raycast (myRay, out myHit, 5000f)) {
 				curSelect.tag = " ";
 				curSelect = myHit.transform.gameObject;
 				curSelect.tag = "selected";
@@ -63,9 +70,12 @@ public class RayClick : MonoBehaviour {
 				system.SetSelectedGameObject (Xin.gameObject);
 				PlayerPrefs.SetInt ("tab", 0);
 			}
-		}
-
+		} 
 		if (curSelect.tag.Equals("selected")) {
+			if (curSelect.name.Contains ("Text")) {
+				curSelect.GetComponent<TextMesh> ().text = Tex.text;
+			} /**/
+
 			//curSelect = GameObject.FindWithTag ("selected").GetComponent<GameObject>;
 			float newX = 0;
 			float newW = 0;
@@ -141,6 +151,7 @@ public class RayClick : MonoBehaviour {
 		curSelect.tag = "selected";
 	}
 
+	// A function that's used in multiple locations that simply updates the text in the various fields
 	private void setFields (GameObject mySel)
 	{
 		Xin.text = mySel.transform.position.x.ToString ();
@@ -149,17 +160,38 @@ public class RayClick : MonoBehaviour {
 		Hei.text = mySel.transform.localScale.y.ToString();
 		float ordTemp = mySel.transform.position.z * -1;
 		Ord.text = ordTemp.ToString ();
-		Nam.text = mySel.transform.name.ToString ();
-		Tex.text = "text";
+		if (curSelect.name.Contains("Text"))
+			Tex.text = curSelect.GetComponent<TextMesh> ().text;
+		else {
+			Tex.text = "text";
+		}
 		output = "Selected: " + mySel.name.ToString();
 	}
 
+
+	// Delete the selected item
 	public void deleteSelect ()
 	{
 		if (curSelect.tag.Equals ("selected")) {
 			curSelect.tag = " ";
 			DestroyObject (curSelect.gameObject);
 			curSelect = new GameObject();
+		}
+	}
+
+	public void setXTile ()
+	{
+		if (curSelect.tag.Equals ("selected")) {
+			xtile = xtile % 6 + 1;
+			curSelect.GetComponent<Renderer> ().material.mainTextureScale = new Vector2 (xtile, ytile);
+		}
+	}
+
+	public void setYTile ()
+	{
+		if (curSelect.tag.Equals ("selected")) {
+			ytile = ytile % 6 + 1;
+			curSelect.GetComponent<Renderer> ().material.mainTextureScale = new Vector2 (xtile, ytile);
 		}
 	}
 }
