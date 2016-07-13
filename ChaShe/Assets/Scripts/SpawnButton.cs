@@ -35,7 +35,7 @@ public class SpawnButton : MonoBehaviour {
 	}
 
 	public void onClick() {
-		Vector3 myPos = new Vector3 (myCam.transform.position.x, myCam.transform.position.y, -1);
+		Vector3 myPos = new Vector3 (myCam.transform.position.x, myCam.transform.position.y, -10);
 		objClone = (GameObject)Instantiate (myObject, myPos, transform.rotation);
 
 		try {

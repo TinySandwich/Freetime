@@ -23,6 +23,7 @@ public class RayClick : MonoBehaviour {
 
 	private int xtile;
 	private int ytile;
+	private bool control = false;
 
 	void Start () {
 		//myCamera = Camera.main.GetComponent<Camera> ();
@@ -56,6 +57,31 @@ public class RayClick : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		// If someone hits the delete button or the delete key, the current object is deleted
+		if (Input.GetKeyDown (KeyCode.Delete)) {
+			deleteSelect ();
+		}
+
+
+		// If someone hits ctrl+c, a duplicate object of curselect is created
+		/*Note: this doesn't work in the editor*/
+		if (Input.GetKey (KeyCode.LeftControl) || Input.GetKey (KeyCode.RightControl)) {
+			control = true;
+		} else {
+			control = false;
+		}
+
+		if (Input.GetKeyUp (KeyCode.C) && control) {
+			if (curSelect.tag.Equals ("selected")) {
+				curSelect.tag = " ";
+
+				Vector3 copyPos = new Vector3 (myCamera.transform.position.x, myCamera.transform.position.y, -10);
+				curSelect = (GameObject)Instantiate (curSelect, copyPos, transform.rotation);
+
+				curSelect.tag = "selected";
+			}
+		} /**/
+
 		// The check to set the selected object
 		if (Input.GetMouseButtonDown (0)) {
 			Ray myRay = myCamera.ScreenPointToRay (Input.mousePosition);
