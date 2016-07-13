@@ -59,8 +59,8 @@ public class SpawnButton : MonoBehaviour {
 		if (objClone.name.Contains("Text"))
 			Tex.text = objClone.GetComponent<TextMesh> ().text;
 		else {
-			Tex.text = "text";
-		}
+			Tex.text = "N/A";
+		}/**/
 
 		system.SetSelectedGameObject (myX.gameObject);
 		PlayerPrefs.SetInt ("tab", 0);

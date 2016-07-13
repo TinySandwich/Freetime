@@ -51,7 +51,7 @@ public class RayClick : MonoBehaviour {
 		myStyle.fontStyle = FontStyle.Bold;
 		myStyle.clipping = TextClipping.Overflow;
 		GUI.color = Color.black;
-		GUI.Label (new Rect (10, 25, 1000, 20), output, myStyle);
+		GUI.Label (new Rect (100, 5, 1000, 20), output, myStyle);
 	}
 	
 	// Update is called once per frame
@@ -163,7 +163,7 @@ public class RayClick : MonoBehaviour {
 		if (curSelect.name.Contains("Text"))
 			Tex.text = curSelect.GetComponent<TextMesh> ().text;
 		else {
-			Tex.text = "text";
+			Tex.text = "N/A";
 		}
 		output = "Selected: " + mySel.name.ToString();
 	}
