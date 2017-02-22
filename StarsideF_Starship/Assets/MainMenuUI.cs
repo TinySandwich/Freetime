@@ -45,6 +45,7 @@ public class MainMenuUI : MonoBehaviour {
 	//---------------------------- Starship Design Buttons
 	public void newDesign () {
 		/*TODO: Load the Starship design scene without any preset information*/
+		UnityEngine.SceneManagement.SceneManager.LoadScene ("starshipDesigner");
 		return;
 	}
 
