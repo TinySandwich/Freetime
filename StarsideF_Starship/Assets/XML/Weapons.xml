@@ -1,0 +1,142 @@
+<directFire>
+	<AGI_Entrenched_Gun>
+		<name>Entrenched Gun</name>
+		<company>AGI</company>
+		<desc></desc>
+		<cost>0</cost>
+		<size>4</size>
+		<range>8"</range>
+		<damage>1d6+1</damage>
+		<type>Im 1, Tough</type>
+	</AGI_Entrenched_Gun>
+	<AGI_Shattercannon>
+		<name>Shattercannon</name>
+		<company>AGI</company>
+		<desc></desc>
+		<cost>1</cost>
+		<size>4</size>
+		<range>5"</range>
+		<damage>1d8+1</damage>
+		<type>Im 1, Spread</type>
+	</AGI_Shattercannon>
+	<AGI_Howitzer>
+		<name>Howitzer</name>
+		<company>AGI</company>
+		<desc></desc>
+		<cost>0</cost>
+		<size>5</size>
+		<range>7"</range>
+		<damage>2d6</damage>
+		<type>Ex 1, AoE 3", Anti-Wing 2</type>
+	</AGI_Howitzer>
+	<LH_Guarantee>
+		<name>Guarantee (cannon)</name>
+		<company>Luckhard</company>
+		<desc></desc>
+		<cost>0</cost>
+		<size>3</size>
+		<range>7"</range>
+		<damage>1d6</damage>
+		<type>Im 1</type>
+	</LH_Guarantee>
+	<LH_Torch>
+		<name>Torch</name>
+		<company>Luckhard</company>
+		<desc></desc>
+		<cost>0</cost>
+		<size>3</size>
+		<range>3"</range>
+		<damage>1d4</damage>
+		<type>La 2, Burning 1d4, Limited Range, Hazard 1</type>
+	</LH_Torch>
+	<LH_Laser>
+		<name>Laser Beam</name>
+		<company>Luckhard</company>
+		<desc></desc>
+		<cost>0</cost>
+		<size>5</size>
+		<range>5"</range>
+		<damage>1d6</damage>
+		<type>La 1, Hazard 1d3</type>
+	</LH_Laser>
+	<LH_C4000>
+		<name>C4000 Launcher</name>
+		<company>Luckhard</company>
+		<desc></desc>
+		<cost>0</cost>
+		<size>3</size>
+		<range>4"</range>
+		<damage>1d4+1</damage>
+		<type>Ex 1, Armor Piercing, Accurate -1, Hazard 1d3</type>
+	</LH_C4000>
+	<PEF_Cutter>
+		<name>Cutter Beam</name>
+		<company>Pony Express Firearms</company>
+		<desc></desc>
+		<cost>1</cost>
+		<size>4</size>
+		<range>5"</range>
+		<damage>1d3</damage>
+		<type>La 3, Focus Fire, Limited Range</type>
+	</PEF_Cutter>
+	<PEF_Gauss>
+		<name>Gauss Rifle "The Railcar"</name>
+		<company>Pony Express Firearms</company>
+		<desc></desc>
+		<cost>2</cost>
+		<size>5</size>
+		<range>12"</range>
+		<damage>3d8+2</damage>
+		<type>Im 1, Reload 1</type>
+	</PEF_Gauss>
+	<PEF_World_Breaker>
+		<name>World Breaker</name>
+		<company>Pony Express Firearms</company>
+		<desc></desc>
+		<cost>2</cost>
+		<size>6</size>
+		<range>15"</range>
+		<damage>3d10+4</damage>
+		<type>Im 1, Armor Piercing, Reload 1</type>
+	</PEF_World_Breaker>
+	<PEF_Db>
+		<name>Double Barrel</name>
+		<company>Pony Express Firearms</company>
+		<desc></desc>
+		<cost>0</cost>
+		<size>4</size>
+		<range>6"</range>
+		<damage>2d4</damage>
+		<type>Im 2, reload 1, Spread</type>
+	</PEF_Db>
+	<ULT_Macrolaser>
+		<name>Macrolaser</name>
+		<company>Ultrend</company>
+		<desc></desc>
+		<cost>1</cost>
+		<size>3</size>
+		<range>5"</range>
+		<damage>1d8</damage>
+		<type>La 1, Hazard 1</type>
+	</ULT_Macrolaser>
+	<ULT_Plasma>
+		<name>Plasma Cannon</name>
+		<company>Ultrend</company>
+		<desc></desc>
+		<cost>2</cost>
+		<size>4</size>
+		<range>6"</range>
+		<damage>4d6+4</damage>
+		<type>Ex 1, Hazard 1, AoE 2", Limited Range, Anti-Wing</type>
+	</ULT_Plasma>
+	<ULT_Reaper>
+		<name>Reaper Cannon</name>
+		<company>Ultrend</company>
+		<desc></desc>
+		<cost>1</cost>
+		<size>2</size>
+		<range>7"</range>
+		<damage>1d4</damage>
+		<type>Im 1</type>
+	</ULT_Reaper>
+</directFire>

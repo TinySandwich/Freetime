@@ -1,0 +1,97 @@
+<!--
+Created by Andrew Smith (aka Tiny_Sandwich) 1/14/2017
+Template for a special attribute
+<name>
+	<effect></effect>
+</name>
+-->
+<near_stationary>
+	<effect>Regardless of this objects size it can only move 1" during its turn. Though it may be in any direct. This usually applies to defense platforms.</effect>
+</near_stationary>
+<stationary>
+	<effect>Regardless of this objects size it cannot be move under its own power. This usually applies to large Space Stations.</effect>
+</stationary>
+<stealth>
+	<effect>Rolls 2 dice by default on all Evasion checks/rolls.</effect>
+</stealth>
+<tough>
+	<effect>After damage is reduced by armor, half it, round in the attacker's favor. Weapons, Crew, and Subsystems can take two hits.</effect>
+</tough>
+<drift>
+	<effect>Starship may make its turn any time during its move. However, the ship must finish its move within the initial arc. If a Starship has drift and graceless, they cancel each other out.</effect>
+</drift>
+<graceless>
+	<effect>Starship may only turn at the end of its movement. If a Starship has drift and graceless, they cancel each other out.</effect>
+</graceless>
+<airless>
+	<effect>The Starship is designed to not be sealed against the vacuum of space. When aboard a Starship with this attribute, non-Auto Crew that take crew damage are removed as casaulties instead of sent to the infirmary, all fires are removed at the end of the damage control phase. Crew members are considered to have minor space suits on, however they are minimal at best. Minor damage to the suits can cause severe damage to the crew member. Note: Equipment such as power armor, will often allow crew to ignore the effects of this attribute if they are equipped with it.</effect>
+</airless>
+<carrier>
+	<effect>The Starship may start with X number of wings docked aboard. The Starship may only hold a maximum of X wings during any point of the game.</effect>
+</carrier>
+<dock>
+	<effect>The Starship may launch, dock, or both no more than X wings during each of its activations. The Starship cannot dock more wings than it has Carrier Slots.</effect>
+</dock>
+<repair>
+	<effect>Infirmary slots for auto-crew.</effect>
+</repair>
+<unique>
+	<effect>The Starship has a strange feature or function. You likely will need to read the ship description for the rules and explanations.</effect>
+</unique>
+<accurate>
+	<effect>Roll X extra attack dice, if X is positive drop the lowest X dice, if X is negative drop the highest X dice. This attribute is cumulative and if a Starship has this attribute all mounts on the Starship count as having it.</effect>
+</accurate>
+<armorpiercing>
+	<effect>Reduce the target's Armor Tier by one.</effect>
+</armorpiercing>
+<spread>
+	<effect>The weapon's munitions spread apart making it easier to hit targets at closer range. If the target is at close range, gain accurate 1 and Anti-Wing 5. At optimal range they may fired as Anti-Wing 2. At long range the weapon gains accurate -2.</effect>
+</spread>
+<aoe>
+	<effect>Area of Effect weapons, deal damage to a wide area. If the attack hits, it deals damage to all units (Friend and Foe) within X inches. Attacks from this weapon must target a Starship, unless this weapon has an upgrade allowing it to attack a different type of target. Note: Any wings and missiles hit by an AoE attack take double damage.</effect>
+</aoe>
+<antiwing>
+	<effect>This weapon maybe fired as a Pd X weapon.</effect>
+</antiwing>
+<detonation>
+	<effect>This weapon may target an unoccupied space, this is most often used by AoE weaponry. Roll to hit as normal (the space has no evasion dice), if the attack hits the weapon counts as hitting the intended location. If the attack is a miss, there was a problem with the weapon and nothing of consequence happened.</effect>
+</detonation>
+<burning>
+	<effect>When this weapon attacks a Starship. On a 3+ (d6) a X strength fire is started, place the indicated fire di(c)e on the Starship.</effect>
+</burning>
+<hazard>
+	<effect>After counting up the total number of misfires this weapon had during its attack, add X to the final total amount of misfires. Ignore this rule if no misfires are rolled during the attack.</effect>
+</hazard>
+<limit>
+	<effect>This weapon or subsystem may only be used X number of times during a game.</effect>
+</limit>
+<limitrange>
+	<effect>This weapon cannot fire at long range.</effect>
+</limitrange>
+<focusfire>
+	<effect>When attacking a Starship, roll damage for every weapon that hit. Then total up all the damage rolled and treat it as one attack when applying armor and damage resistances. Note: A weapon with focus fire can only get 1 critical hit.</effect>
+</focusfire>
+<bulky>
+	<effect>Instead of 1 slot, wings and crew with attribute take up 2 carrier or 2 transport slots respectively.</effect>
+</bulky>
+<transport>
+	<effect>This wing starts the game with X number of crew. For $1 every crew of this crew maybe start the game in power armor. This power armor must be the same type.</effect>
+</transport>
+<dam_red>
+	<effect>Reduce any damage taken by X. This is most commonly seen with Armor.</effect>
+</dam_red>
+<control>
+	<effect>When the host Starship activates if the unit begins further than X inches from the host, the unit is destroyed.</effect>
+</control>
+<stasis>
+	<effect>Anytime during this Starship's activation roll Xd6 for each 6+, you may add 1 crew to the Starship if you do reduce its Stasis amount by the amount of crew added.</effect>
+</stasis>
+<shield>
+	<effect>The unit adds Xd6 worth of dice to their evasion pool. These dice must look distinct from evasion dice when rolling. Treat shield dice exactly as evasion dice. However, they cause a misfire on a roll of 1 and if the shield die rolls 1, 2, or 3 the dice is removed from the pool until the Starship's next activation.</effect>
+</shield>
+<assault>
+	<effect>If this unit wins a collision event with a Starship, it may move X number of crew into or out of the Starship's damage control area. After this is done treat the rest of the movement as those no collision has occured.</effect>
+</assault>
+<ai>
+	<effect>Units with this attribute are controlled by an artificial intelligence (A.I.) or virtual intelligence (V.I.). Mechanically, this distinction is irrelivant. If a Starship has this attribute, every station aboard the Starship is considered "crewed" as long as the bridge is not destroyed.</effect>
+</ai>

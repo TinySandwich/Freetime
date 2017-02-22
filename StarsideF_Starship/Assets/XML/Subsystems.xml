@@ -1,0 +1,186 @@
+<!--
+Created by Andrew Smith (aka Tiny_Sandwich) 1/15/2017
+Template for a Subsystems
+<name>
+	<name></name>
+	<action></action>
+	<passive></passive>
+	<cost></cost>
+	<stack></stack>
+</name>
+-->
+<exp_barracks>
+	<name>Expanded Barracks</name>
+	<action>none</action>
+	<passive>Crew +2</passive>
+	<cost>1 Structure</cost>
+	<stack>2</stack>
+</exp_barracks>
+<shield_gen>
+	<name>Shield Generator</name>
+	<action>Shield +1</action>
+	<passive>Shield +1</passive>
+	<cost>1 Structure</cost>
+	<stack>3</stack>
+</shield_gen>
+<bay_hanger>
+	<name>Hanger Bay</name>
+	<action>none</action>
+	<passive>+2 Carrier slots and +1 Docking Port</passive>
+	<cost>3 Structure</cost>
+	<stack>2</stack>
+</bay_hanger>
+<bay_launch>
+	<name>Launch Bay</name>
+	<action>none</action>
+	<passive>+1 Carrier slot, +1 Docking Port. Any wings launched via this subsystem gain +6" movement during their launch</passive>
+	<cost>3 Structure</cost>
+	<stack>2</stack>
+</bay_launch>
+<targetting_comp>
+	<name>Targetting Computer</name>
+	<action>none</action>
+	<passive>Accurate +1 (for either Pd or Df)</passive>
+	<cost>2 Structure</cost>
+	<stack>2</stack>
+</targetting_comp>
+<armor_light>
+	<name>Lighter Armor</name>
+	<action>none</action>
+	<passive>Reduce armor by one tier. *Can't be taken multiple times or with Heavy armor*</passive>
+	<cost>none</cost>
+	<stack>1</stack>
+</armor_light>
+<armor_heavy>
+	<name>Heavier Armor</name>
+	<action>none</action>
+	<passive>Improve armor by one tier. *Can't be taken multiple times or with Light armor*</passive>
+	<cost>none</cost>
+	<stack>1</stack>
+</armor_heavy>
+<exp_infirmary>
+	<name>Expanded Infirmary</name>
+	<action>none</action>
+	<passive>Infirmary slots +2</passive>
+	<cost>none</cost>
+	<stack>3</stack>
+</exp_infirmary>
+<exp_brig>
+	<name>Expanded Brig</name>
+	<action>none</action>
+	<passive>Brig slots +2</passive>
+	<cost>none</cost>
+	<stack>3</stack>
+</exp_brig>
+<cryopods>
+	<name>Cryo Pods</name>
+	<action>Make Stasis roll now, with a +2</action>
+	<passive>Stasis +2</passive>
+	<cost>none</cost>
+	<stack>3</stack>
+</cryopods>
+<imp_escape>
+	<name>Improved Escape Pods</name>
+	<action>none</action>
+	<passive>Escape pods launched from this ship may be placed within 6" of the Starship and may move 1" per turn. *Can't be taken multiple times*</passive>
+	<cost>none</cost>
+	<stack>1</stack>
+</imp_escape>
+<power_armor>
+	<name>Power Armor Station</name>
+	<action>none</action>
+	<passive>Upgrade 3 teams with power armor. All crews aboard the same Starship must be upgraded with the same type of power armor</passive>
+	<cost>1 Structure per 3 teams</cost>
+	<stack>inf</stack>
+</power_armor>
+<heat_sink>
+	<name>Extra Heat Sinks</name>
+	<action>none</action>
+	<passive>Once per turn ignore the effect of 1 misfire.</passive>
+	<cost>none</cost>
+	<stack>3</stack>
+</heat_sink>
+<exp_main_engine>
+	<name>Expanded Main Engines</name>
+	<action>none</action>
+	<passive>+3" Movement.</passive>
+	<cost>none</cost>
+	<stack>1</stack>
+</exp_main_engine>
+<bay_repair>
+	<name>Repair Bay</name>
+	<action>none</action>
+	<passive>+2 Repair Slots</passive>
+	<cost>none</cost>
+	<stack>2</stack>
+</bay_repair>
+<missile_rack>
+	<name>Missile Racks</name>
+	<action>Fires 1 or both missiles</action>
+	<passive>Starship gains 2 missiles</passive>
+	<cost>1 Structure</cost>
+	<stack>2</stack>
+</missile_rack>
+<bay_torpedo>
+	<name>Torpedo Bay</name>
+	<action>Fire the torpedo</action>
+	<passive>Starship gains 1 torpedo</passive>
+	<cost>1 Structure</cost>
+	<stack>2</stack>
+</bay_torpedo>
+<depleted_u238>
+	<name>PEF Depleted U-238 Rounds</name>
+	<action>none</action>
+	<passive>(special bullets) Im weapons on this Starship gain Armor Piercing. *Can't be taken multiple times in compatible with other special bullets*</passive>
+	<cost>$1</cost>
+	<stack>1</stack>
+</depleted_u238>
+<drive_grav>
+	<name>Gravity Drive</name>
+	<action>none</action>
+	<passive>May turn during its movement in addition to the normal movement options. *Can't be taken multiple times*</passive>
+	<cost>2/4/6 Structure</cost>
+	<stack>1</stack>
+</drive_grav>
+<drive_warp>
+	<name>Secondary Warp Drive</name>
+	<action>Once per game, the Starship's speed becomes infinite for 1 activation. This must be the first station activated, the Starship cannot turn during or after the movement, after which only 1d3+1 stations may activate normally.</action>
+	<passive>none *Can't be taken multiple times*</passive>
+	<cost>1/3/5 Structure</cost>
+	<stack>1</stack>
+</drive_warp>
+<stealth_gen>
+	<name>Stealth Generator</name>
+	<action>Starship gains Stealth, until it activates again. Hazard 1</action>
+	<passive>none *Can't be taken multiple times*</passive>
+	<cost>3/6/9 Structure</cost>
+	<stack>1</stack>
+</stealth_gen>
+<comp_mainframe>
+	<name>Computer Mainframe</name>
+	<action>none</action>
+	<passive>Gain 4 Auto-Crew, must be deployed before</passive>
+	<cost>1 structure</cost>
+	<stack>1</stack>
+</comp_mainframe>
+<guided_rounds>
+	<name>Ultrend Guided Rounds</name>
+	<action>none</action>
+	<passive>(special bullets) Im weapons on this Starship gain Accuracy +1. *Can't be taken multiple times in compatible with other special bullets*</passive>
+	<cost>$2</cost>
+	<stack>1</stack>
+</guided_rounds>
+<quan_det>
+	<name>Ultrend Quantum Detonator</name>
+	<action>This Starship immediately suffers a "Core Detonation" result on the damage chart. For best results evacuate the Starship prior to detonating.</action>
+	<passive>none *Can't be taken multiple times*</passive>
+	<cost>none</cost>
+	<stack>1</stack>
+</quan_det>
+<jump_inter>
+	<name>Jump Interdictor</name>
+	<action>Turn this system on or off. This system remains on or off until this action is taken again.</action>
+	<passive>Add 1 to all FTL Charge actions, until this system is deactivated or destroyed. Warp jumps cannot end their movement or pass within 6" of a Starship with this system on.</passive>
+	<cost>2 Structure</cost>
+	<stack>1</stack>
+</jump_inter>
