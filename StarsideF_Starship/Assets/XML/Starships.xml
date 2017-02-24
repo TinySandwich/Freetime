@@ -1,7 +1,8 @@
+<?xml version="1.0"?>
 <!--
 Created by Andrew Smith (aka Tiny_Sandwich) 1/14/2017
 Starship Template
-	<XXX>
+	<Starship chassis="" company="">
 		<chassis></chassis>
 		<company></company>
 		<desc>XXX</desc>
@@ -33,8 +34,9 @@ Starship Template
 		<titan>
 			<cost></cost><struct></struct><crew></crew>
 		</titan>
-	</XXX>
+	</Starship>
 -->
+<!--
 <destroyer>
 	<AGI_Air_Field>
 		<cost>5</cost>
@@ -241,11 +243,10 @@ Starship Template
 	<speed>4”</speed>
 	<evDice>6</evDice>
 	<massD>12</massD>
-</titan>
+</titan> -->
 <chassis>
-	<AGI_Air_Field>
-		<chassis>Air Field</chassis>
-		<company>AGI</company>
+<Starships>
+	<Starship chassis="Air Field" company="AGI">
 		<desc>The AGI Air Field is a mobile deep space carrier. While its structure is more fragile than most it does come with a large hanger already present. Due to its size and mass it is rather slow but pack with crew.</desc>
 		<ratio>1.5</ratio>
 		<evasion>1</evasion>
@@ -289,10 +290,8 @@ Starship Template
 			<struct>22</struct>
 			<crew>5</crew>
 		</titan>
-	</AGI_Air_Field>
-	<AGI_Picket>
-		<chassis>Picket</chassis>
-		<company>AGI</company>
+	</Starship>
+	<Starship chassis="Picket" company="AGI">
 		<desc>A small defensive ship designed to hunt down and intercept enemy wings. It's built in computer is specifically designed to track the movements of smaller vessels giving it an advantage in predicting their movements. Some Starship operators compare these AIs to dogs.</desc>
 		<ratio>1</ratio>
 		<evasion>2</evasion>
@@ -330,10 +329,8 @@ Starship Template
 			<struct>18</struct>
 			<crew>0</crew>
 		</titan>
-	</AGI_Picket>
-	<AGI_Shield_Wall>
-		<chassis>Shield Wall</chassis>
-		<company>AGI</company>
+	</Starship>
+	<Starship chassis="Shield Wall" company="AGI">
 		<desc>War Plate: To protect the Starship and those behind it, the AGI Shield Wall has a extremely dense plate facing forward. Any attacks against the Shield Wall come from attackers even partially within the front arc, treat the Shield Wall's armor as one Tier higher. Additionally, if the Shield wall is inbetween any attacks against a Starship (friend or foe) the defending Starship may use the Shield Wall's armor tier unless theirs would normally be higher. Note: Other Starships benefitting from this feature use the Shield Wall's armor tier not the extra tier the War Plate provides. 
 		
 		The AGI Shield Wall is akin to a massive wall in space. It has a triple reinforced front armor plate that protects against all but the most powerful of attacks. Due to its odd shape it is effective at providing cover for ships behind.</desc>
@@ -379,10 +376,8 @@ Starship Template
 			<struct>25</struct>
 			<crew>5</crew>
 		</titan>
-	</AGI_Shield_Wall>
-	<LH_Hunk>
-		<chassis>Hunk</chassis>
-		<company>Luckhard</company>
+	</Starship>
+	<Starship chassis="Hunk" company="Luckhard">
 		<desc>Brought to you by Luckhard's tenacious recycling department, The Hunk is a marvelous heavy Starship for all comers. Built from unused debris such as Asteroids, Comets, and demolished Space Stations each Hunk has the possibility of being unique. The general open design of the Hunk allows for larger weapon mounting then most Starships.
 
 Luckhard Hunks are repurposed asteroids, comets, decommissioned Space Stations, etc... Making most Hunks unique from each other, though Luckhard does provide a standard design template if you've got the raw asteroid matter. These larger Starships are very structurally sound, though awkward to fly. They also have a large number of weapon mounts arranged randomly, er...strategically across the entirety of the vessel. Trying to make the Galaxy a cleaner place. Luckhard recycling at its finest! </desc>
@@ -428,10 +423,8 @@ Luckhard Hunks are repurposed asteroids, comets, decommissioned Space Stations, 
 			<struct>22</struct>
 			<crew>5</crew>
 		</titan>
-	</LH_Hunk>
-	<LH_Casino_Barge>
-		<chassis>Casino Barge</chassis>
-		<company>Luckhard</company>
+	</Starship>
+	<Starship chassis="Casino Barge" company="Luckhard">
 		<desc>Thrill seekers X: This Starship has a large contingency of untrained personnel that filled out the proper paperwork for a thrilling adventure. The Starship has X additional teams with the following exceptions: 1) They use d4s instead of d6s. 2) They can only be deployed as damage control.
 
 In case of boarding parties, a Luckhard approved firearm will be dispensed from the nearest slot machine. Retrieve the firearm and await further directions from your local team lead. Please remember do not shoot the other guests as that will cause undue panic and may be grounds for additional fees. In the unlikely event of your death or capture, your "emergency contact" will be notified and shipped a complimentary fruit basket. Luckhard is not responsible for any lost, stolen, or murdered cargo during your flight. By signing this paperwork you've agreed to understand this statement and agree to defend the ship whenever possible. Thank you for flying Luckhard, remember "How can you fail with Luck on your side?"</desc>
@@ -475,10 +468,8 @@ In case of boarding parties, a Luckhard approved firearm will be dispensed from 
 			<struct>22</struct>
 			<crew>6</crew>
 		</titan>
-	</LH_Casino_Barge>
-	<LH_Crate>
-		<chassis>Crate</chassis>
-		<company>Luckhard</company>
+	</Starship>
+	<Starship chassis="Crate" company="Luckhard">
 		<desc>The Luckhard Crate is a VI driven cargo ship. Equipped with a “Set it and Forget it” model Vi, you just have enter the coordinates into the Crate's patented computer and will take off delivering your goods in a timely manner. Armed with a defense turret the Crate can even ward off any would-be pirates*.
 
 * Results may vary depending upon armament and quantity of pirates. User discretion is advised. Luckhard is not responsible for lost, stolen or murdered cargo.</desc>
@@ -518,10 +509,8 @@ In case of boarding parties, a Luckhard approved firearm will be dispensed from 
 			<struct>18</struct>
 			<crew>0</crew>
 		</titan>
-	</LH_Crate>
-	<PEF_Barrel_F>
-		<chassis>Barrel F</chassis>
-		<company>Pony Express Firearms</company>
+	</Starship>
+	<Starship chassis="Barrel F" company="Pony Express Firearms">
 		<desc>Alright so let me set the mood, you take your fleet and jump out of your home system. Suddenly vicious pirates jump in and start wrangling up your folks, because you ain't got nothing to stop them. No one wants that!
 
 Instead I offer you the latest in PEF AI tech, the PEF Barrel. It's an AI driven home defense marvel with a gun large enough to scare even the most vile rebel or slaver! It comes with a couple settings for easy use. "Everything." "Everything but..." and "Only..." Set it and forget it with this little puppy. It'll putter around the area you left it and blow away anything you told it to. Heck if you're at home, you can even remote into this thing and test your hand at some target practice from the comfort of your own couch. It's universal weapon mount system lets you mount anything you want. It's your god given right to defend yourself, so might as well have some fun while you do!</desc>
@@ -561,10 +550,8 @@ Instead I offer you the latest in PEF AI tech, the PEF Barrel. It's an AI driven
 			<struct>18</struct>
 			<crew>0</crew>
 		</titan>
-	</PEF_Barrel_F>
-	<PEF_Barrel_P>
-		<chassis>Barrel P</chassis>
-		<company>Pony Express Firearms</company>
+	</Starship>
+	<Starship chassis="Barrel P" company="Pony Express Firearms">
 		<desc>Alright so let me set the mood, you take your fleet and jump out of your home system. Suddenly vicious pirates jump in and start wrangling up your folks, because you ain't got nothing to stop them. No one wants that!
 
 Instead I offer you the latest in PEF AI tech, the PEF Barrel. It's an AI driven home defense marvel with a gun large enough to scare even the most vile rebel or slaver! It comes with a couple settings for easy use. "Everything." "Everything but..." and "Only..." Set it and forget it with this little puppy. It'll putter around the area you left it and blow away anything you told it to. Heck if you're at home, you can even remote into this thing and test your hand at some target practice from the comfort of your own couch. It's universal weapon mount system lets you mount anything you want. It's your god given right to defend yourself, so might as well have some fun while you do!</desc>
@@ -604,10 +591,8 @@ Instead I offer you the latest in PEF AI tech, the PEF Barrel. It's an AI driven
 			<struct>18</struct>
 			<crew>0</crew>
 		</titan>
-	</PEF_Barrel_P>
-	<PEF_Six_Shooter>
-		<chassis>Six Shooter</chassis>
-		<company>Pony Express Firearms</company>
+	</Starship>
+	<Starship chassis="Six Shooter" company="Pony Express Firearms">
 		<desc>Revolver: The majority of the PEF Six Shooter is a rotating cylinder. It houses the 6 main weapons of the Starship, though due to its design only 2 weapons may fire at once. 
 
 Have you ever thought to yourself? "Man, I love shooting, but this gun's automated system takes too long to reload itself. I wish there was something else I could shoot while I wait." Well then do I have a treat for you my friend. A dream child of the Founders, the PEF six-shooter has a patented rotating center protecting the weapons from fire while still allowing two to fire. This system works great for larger guns that need to reload between shots.</desc>
@@ -661,10 +646,8 @@ Have you ever thought to yourself? "Man, I love shooting, but this gun's automat
 			<struct>22</struct>
 			<crew>6</crew>
 		</titan>
-	</PEF_Six_Shooter>
-	<PEF_War_Train>
-		<chassis>War Train</chassis>
-		<company>Pony Express Firearms</company>
+	</Starship>
+	<Starship chassis="War Train" company="Pony Express Firearms">
 		<desc>A massive Starship that sole purpose is to bring the most and biggest guns to the field. Massive in size, the PEF War Train has the most firepower of any ship on the market. Equipped with Redundant systems and heavy plating, this Starship can take a hit just as much as it can dish it out.</desc>
 		<ratio>4</ratio>
 		<evasion>1</evasion>
@@ -708,10 +691,8 @@ Have you ever thought to yourself? "Man, I love shooting, but this gun's automat
 			<struct>25</struct>
 			<crew>6</crew>
 		</titan>
-	</PEF_War_Train>
-	<ULT_Mamba>
-		<chassis>Mamba</chassis>
-		<company>Ultrend</company>
+	</Starship>
+	<Starship chassis="Mamba" company="Ultrend">
 		<desc>Master Control: If the bridge is "crewed" by non-auto crew, than every station aboard the Starship may activate, even if they are not "crewed."
 		
 		Ultrend, leader in high-tech Starships brings you their latest model the Mamba. Fast, sleek, graceful, effective, clean and glorious. This Starship will truly show the galaxy you mean business. The Mamba is equipped with Ultrend's “Master Control” system allowing a single pilot do the job of several. You can literally feel the ship as you glide through the stars.
@@ -757,10 +738,8 @@ Ultrend, “We know what you want.”</desc>
 			<struct>18</struct>
 			<crew>1</crew>
 		</titan>
-	</ULT_Mamba>
-	<ULT_Mamba_B>
-		<chassis>Mamba B</chassis>
-		<company>Ultrend</company>
+	</Starship>
+	<Starship chassis="Mamba B" company="Ultrend">
 		<desc>Master Control: If the bridge is "crewed" by non-auto crew, than every station aboard the Starship may activate, even if they are not "crewed."
 		
 		While the Mamba comes standard with an effective array of armaments, perhaps that's not enough. The Mamba B is the Starship for you. Equipped with a state of the art turret and additional armor plating, the Mamba B can hold its own against anything the galaxy can throw at you. All without sacrificing the elegance and grace of the Mamba.</desc>
@@ -806,10 +785,8 @@ Ultrend, “We know what you want.”</desc>
 			<struct>22</struct>
 			<crew>1</crew>
 		</titan>
-	</ULT_Mamba_B>
-	<ULT_Mamba_St>
-		<chassis>Mamba St</chassis>
-		<company>Ultrend</company>
+	</Starship>
+	<Starship chassis="Mamba St" company="Ultrend">
 		<desc>Master Control: If the bridge is "crewed" by non-auto crew, than every station aboard the Starship may activate, even if they are not "crewed."
 		
 		Adding to perfection, the Mamba St grants the use a state-of-the-art displacement generators. Enemies won't know what hit them, as their primitive computers fail to connect. Coupled with the Mamba's effective mass-to-velocity Grav-Drives, you'll slip through any dangerous situation. Opening up the way to the stars and beyond.</desc>
@@ -853,5 +830,6 @@ Ultrend, “We know what you want.”</desc>
 			<struct>13</struct>
 			<crew>1</crew>
 		</titan>
-	</ULT_Mamba_St>
+	</Starship>
+</Starships>
 </chassis>

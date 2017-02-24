@@ -1,0 +1,14 @@
+<chassis>
+	<Starships>
+		<Starship chassis="Air Field" company="AGI">
+			<desc>The AGI Air Field is a mobile deep space carrier. While its structure is more fragile than most it does come with a large hanger already present. Due to its size and mass it is rather slow but pack with crew.</desc>
+		</Starship>
+			
+		<Starship chassis="Mamba B" company="Ultrend">
+			<desc>Master Control: If the bridge is "crewed" by non-auto crew, than every station aboard the Starship may activate, even if they are not "crewed."
+			
+			While the Mamba comes standard with an effective array of armaments, perhaps that's not enough. The Mamba B is the Starship for you. Equipped with a state of the art turret and additional armor plating, the Mamba B can hold its own against anything the galaxy can throw at you. All without sacrificing the elegance and grace of the Mamba.</desc>
+		</Starship>	
+	</Starships>
+</chassis>
+	
