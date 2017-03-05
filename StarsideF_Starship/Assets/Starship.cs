@@ -22,6 +22,7 @@ public class Starship {
 	public string myCompany;
 
 	public string desc;
+	public int modelRatio;
 
 
 	public Starship () {
@@ -46,7 +47,9 @@ public class Starship {
 		return myChassis;
 	}
 
-
+	public int getLength (int width) { //Calculate the length of the ship based on the width and ratio
+		return modelRatio * width;
+	}
 
 	/*======================================SETS & GETS (END)*/
 }
